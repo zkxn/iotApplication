@@ -1,0 +1,281 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.iot.iotApplication</groupId>
+  <artifactId>iotApplication</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <url>http://maven.apache.org</url>
+
+  <!-- 全局属性配置 -->
+  <properties>
+    <spring.version>4.3.8.RELEASE</spring.version>
+    <hibernate.version>5.2.10.Final</hibernate.version>
+    <hibernate.validator.version>5.4.1.Final</hibernate.validator.version>
+  </properties>
+
+  <dependencies>
+
+    <!-- servlet依赖，最终由servlet容器提供，无需打包到war包中，故scope为provided -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- spring-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-oxm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!-- json解析 -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.35</version>
+    </dependency>
+
+    <!-- json数据 使springMVC可以返回json值 ,视情况添加-->
+    <!--    java对象和json相互转化-->
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>1.9.12</version>
+    </dependency>
+
+    <!-- json数据 使springMVC可以返回json值 ,视情况添加-->
+    <!--    java对象和json相互转化-->
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-core-asl</artifactId>
+      <version>1.9.12</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+<!--      <optional>true</optional>-->
+      <version>1.18.8</version>
+    </dependency>
+
+    <!-- log4j配置, 视情况添加-->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+
+<!--    Java 字节码编辑类库-->
+<!--    <dependency>-->
+<!--      <groupId>org.javassist</groupId>-->
+<!--      <artifactId>javassist</artifactId>-->
+<!--      <version>3.22.0-CR1</version>-->
+<!--    </dependency>-->
+
+    <!-- 认证服务过滤器 跨域那里的-->
+    <dependency>
+      <groupId>com.thetransactioncompany</groupId>
+      <artifactId>cors-filter</artifactId>
+      <version>2.5</version>
+    </dependency>
+
+    <!-- Java基本对象方法的工具类包 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.5</version>
+    </dependency>
+
+    <!-- Java集合对象方法的工具包类 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>4.1</version>
+    </dependency>
+
+    <!-- Java IO工具包类 -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.5</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.3.1</version>
+    </dependency>
+
+    <!--很强大的表达式引擎 -->
+<!--    <dependency>-->
+<!--      <groupId>com.googlecode.aviator</groupId>-->
+<!--      <artifactId>aviator</artifactId>-->
+<!--      <version>3.1.0</version>-->
+<!--    </dependency>-->
+
+
+
+    <!-- 处理excel的 -->
+<!--    <dependency>-->
+<!--      <groupId>net.sourceforge.jexcelapi</groupId>-->
+<!--      <artifactId>jxl</artifactId>-->
+<!--      <version>2.6.12</version>-->
+<!--    </dependency>-->
+
+
+    <!-- bcprov-jdk15on包用于创建CSR（证书请求） -->
+<!--    <dependency>-->
+<!--      <groupId>org.bouncycastle</groupId>-->
+<!--      <artifactId>bcprov-jdk15</artifactId>-->
+<!--      <version>1.46</version>-->
+<!--    </dependency>-->
+
+    <!-- 模板引擎-->
+<!--    <dependency>-->
+<!--      <groupId>org.apache.velocity</groupId>-->
+<!--      <artifactId>velocity</artifactId>-->
+<!--      <version>1.7</version>-->
+<!--    </dependency>-->
+
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.3</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/poi/poi -->
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+<!--    好像也是操作office的-->
+<!--    <dependency>-->
+<!--      <groupId>org.apache.poi</groupId>-->
+<!--      <artifactId>poi</artifactId>-->
+<!--      <version>4.0.1</version>-->
+<!--    </dependency>-->
+
+
+<!--    主要用于简化JavaBean封装数据的操作-->
+<!--    <dependency>-->
+<!--      <groupId>commons-beanutils</groupId>-->
+<!--      <artifactId>commons-beanutils</artifactId>-->
+<!--      <version>1.9.3</version>-->
+<!--    </dependency>-->
+
+
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.2.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.6</version>
+    </dependency>
+
+
+<!--    是一个简单的java类库用于将一种对象转换成另外一种对象-->
+<!--    <dependency>-->
+<!--      <groupId>net.sf.ezmorph</groupId>-->
+<!--      <artifactId>ezmorph</artifactId>-->
+<!--      <version>1.0.6</version>-->
+<!--    </dependency>-->
+
+    <dependency>
+      <groupId>net.sf.json-lib</groupId>
+      <artifactId>json-lib-ext-spring</artifactId>
+      <version>1.0.2</version>
+    </dependency>
+
+    <!--导出文件-->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>3.17</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>3.17</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.4</version>
+    </dependency>
+
+<!--    字符串操作转List，map很好用-->
+<!--    <dependency>-->
+<!--      <groupId>com.google.guava</groupId>-->
+<!--      <artifactId>guava</artifactId>-->
+<!--      <version>16.0.1</version>-->
+<!--      &lt;!&ndash;<version>16.0.1</version>&ndash;&gt;-->
+<!--    </dependency>-->
+
+    <!-- json 转 xml-->
+<!--    <dependency>-->
+<!--      <groupId>xom</groupId>-->
+<!--      <artifactId>xom</artifactId>-->
+<!--      <version>1.0</version>-->
+<!--    </dependency>-->
+
+  </dependencies>
+  <build>
+
+
+    <!--maven编译打包文件名-->
+    <finalName>iotApplication</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <!-- 指定编译jdk版本 -->
+          <source>7</source>
+          <target>7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
