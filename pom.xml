@@ -68,7 +68,7 @@
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
-      <version>1.2.35</version>
+      <version>1.2.73</version>
     </dependency>
 
     <!-- json数据 使springMVC可以返回json值 ,视情况添加-->
@@ -100,6 +100,18 @@
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.25</version>
     </dependency>
 
 <!--    Java 字节码编辑类库-->
@@ -272,8 +284,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <!-- 指定编译jdk版本 -->
-          <source>7</source>
-          <target>7</target>
+          <source>8</source>
+          <target>8</target>
         </configuration>
       </plugin>
     </plugins>
